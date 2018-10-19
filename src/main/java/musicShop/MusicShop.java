@@ -30,4 +30,28 @@ public class MusicShop {
         this.stock.remove(stockItem);
     }
 
+    private double getTotalCost() {
+        double totalCost = 0.00;
+        for (ISell item : stock) {
+            totalCost += item.getCost();
+        }
+        return totalCost;
+    }
+
+    private double getTotalPrice() {
+        double totalPrice = 0.00;
+        for (ISell item : stock) {
+            totalPrice += item.getPrice();
+        }
+        return totalPrice;
+    }
+
+    public double getTotalMarkupMoney() {
+        return getTotalPrice() - getTotalCost();
+    }
+
+    public double getTotalMarkupPercent() {
+        return (getTotalMarkupMoney() / getTotalCost()) * 100.00;
+    }
+
 }
