@@ -54,4 +54,11 @@ public class MusicShop {
         return (getTotalMarkupMoney() / getTotalCost()) * 100.00;
     }
 
+    public double getTotalMarkupMoneyUsingItemMethod() {
+        double totalMarkupMoney = 0.00;
+        for (ISell item : stock) {
+            totalMarkupMoney += item.getMarkupMoney();
+        }
+        return totalMarkupMoney;
+    }
 }

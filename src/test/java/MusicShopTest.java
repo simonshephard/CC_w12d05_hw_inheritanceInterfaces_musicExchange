@@ -56,6 +56,13 @@ public class MusicShopTest {
         musicShop.addStock(guitarStrings);
         assertEquals(81.50, musicShop.getTotalMarkupPercent(), 0.01);
     }
-    
+
+    @Test
+    public void getTotalMarkupMoneyUsingItemMethod() {
+        musicShop.addStock(guitar);
+        musicShop.addStock(guitarStrings);
+        assertEquals(44.00, musicShop.getTotalMarkupMoneyUsingItemMethod(), 0.01);
+    }
+
 
 }
